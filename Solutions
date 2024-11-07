@@ -1,0 +1,10 @@
+1. Twitter company - Histogram of tweets
+
+SELECT tweet_num as tweet_bucket , COUNT(user_id) AS users_num
+FROM 
+(SELECT user_id, 
+COUNT(tweet_id) as tweet_num 
+FROM tweets
+WHERE tweet_date BETWEEN '2022-01-01' AND '2022-01-31'
+GROUP BY user_id) AS tweet_tweets
+GROUP BY tweet_bucket
