@@ -29,7 +29,7 @@ ORDER BY total_likes
 LIMIT 2 ) AS total_number_of_likes
 
 
-##  Filter for rows that have no data present 
+## 4.  Filter for rows that have no data present 
 Tip: use a WHERE clause. It might look something like this: WHERE column IS NULL
 E.g. Unfinished Parts
 Tesla SQL Interview Question
@@ -37,5 +37,15 @@ Tesla SQL Interview Question
 SELECT part,assembly_step FROM parts_assembly
 WHERE finish_date is NULL
 ;
+
+## 5. CASE statement to group laptop views into laptop_views column and tablet & phone views into mobile_views
+
+Laptop vs. Mobile Viewership
+New York Times SQL Interview Question
+
+SELECT 
+SUM(CASE WHEN device_type = 'laptop' THEN 1 ELSE 0 END) AS Laptop_views,
+SUM(CASE WHEN device_type IN ('tablet','phone') THEN 1 ELSE 0 END) as mobile_views
+FROM viewership;
 
 
