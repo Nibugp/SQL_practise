@@ -49,3 +49,18 @@ SUM(CASE WHEN device_type IN ('tablet','phone') THEN 1 ELSE 0 END) as mobile_vie
 FROM viewership;
 
 
+## 6.To obtain the last and first post per user, try using the MIN and MAX functions, and then substract one from another :
+
+SELECT 
+    user_id, 
+    MAX(post_date::date) - MIN(post_date::date) AS date_difference
+FROM 
+    posts
+WHERE 
+    DATE_PART('year', post_date::date) = 2021
+GROUP BY 
+    user_id
+HAVING 
+    COUNT(post_id) > 1;
+
+
