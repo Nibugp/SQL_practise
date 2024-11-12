@@ -17,6 +17,7 @@ FROM candidates
 WHERE skill IN ('Python' , 'Tableau','PostgreSQL')
 LIMIT 1
 
+
 ##3. Page With No Likes
 Facebook SQL Interview Question
 
@@ -37,6 +38,7 @@ Tesla SQL Interview Question
 SELECT part,assembly_step FROM parts_assembly
 WHERE finish_date is NULL
 ;
+
 
 ## 5. CASE statement to group laptop views into laptop_views column and tablet & phone views into mobile_views
 
