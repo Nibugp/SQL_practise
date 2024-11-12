@@ -53,6 +53,9 @@ FROM viewership;
 
 ## 6.To obtain the last and first post per user, try using the MIN and MAX functions, and then substract one from another :
 
+Average Post Hiatus (Part 1)
+Facebook SQL Interview Question
+
 SELECT 
     user_id, 
     MAX(post_date::date) - MIN(post_date::date) AS date_difference
