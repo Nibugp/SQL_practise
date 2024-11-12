@@ -27,3 +27,15 @@ LEFT JOIN page_likes AS b ON a.page_id = b.page_id
 GROUP BY a.page_id
 ORDER BY total_likes
 LIMIT 2 ) AS total_number_of_likes
+
+
+##  Filter for rows that have no data present 
+Tip: use a WHERE clause. It might look something like this: WHERE column IS NULL
+E.g. Unfinished Parts
+Tesla SQL Interview Question
+
+SELECT part,assembly_step FROM parts_assembly
+WHERE finish_date is NULL
+;
+
+
