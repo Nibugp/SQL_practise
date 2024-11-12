@@ -17,3 +17,13 @@ FROM candidates
 WHERE skill IN ('Python' , 'Tableau','PostgreSQL')
 LIMIT 1
 
+##3. Page With No Likes
+Facebook SQL Interview Question
+
+SELECT page_id FROM
+(SELECT a.page_id AS page_id , COUNT(b.liked_date) as total_likes
+FROM pages AS a
+LEFT JOIN page_likes AS b ON a.page_id = b.page_id
+GROUP BY a.page_id
+ORDER BY total_likes
+LIMIT 2 ) AS total_number_of_likes
