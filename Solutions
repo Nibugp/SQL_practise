@@ -68,4 +68,18 @@ GROUP BY
 HAVING 
     COUNT(post_id) > 1;
 
+7. Teams Power Users
+Microsoft SQL Interview Question
+
+SELECT sender_id,total_messages
+FROM
+(SELECT sender_id, 
+       COUNT(message_id) AS total_messages, 
+       DATE_PART('year', sent_date) AS year, 
+       DATE_PART('month', sent_date) AS month
+FROM messages
+GROUP BY sender_id, year, month
+ORDER BY total_messages DESC
+limit 2) AS messages_count
+
 
